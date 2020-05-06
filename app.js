@@ -1,26 +1,26 @@
-// const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const router = require('./routes/router');
-
-const { PORT = 3000 } = process.env;
+const { PORT, DATABASE_URL } = require('./config');
+// const { PORT = 3000 } = process.env;
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {
+mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
+  useUnifiedTopology: true,
 });
 
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
   req.user = {
-    _id: '5ea7855beb868b23e88404f3',
+    _id: '5eb2a9b97f23d358845b6d4f',
   };
 
   next();

@@ -1,5 +1,5 @@
 {
-  "name": "YaPraktikum-sprint12",
+  "name": "YaPraktikum-sprint13",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -22,5 +22,5 @@
     "validator": "^13.0.0"
   },
   "keywords": [],
-  "description": "First API for Mesto project"
+  "description": "Back API for Mesto project"
 }
